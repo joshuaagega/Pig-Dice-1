@@ -1,0 +1,19 @@
+.container{
+background-color: #6E7171;
+font-family: 'Pacifico', cursive;
+font-size: 80px;
+color:
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1CE7E7, 0 0 40px #1CE7E7, 0 0 50px #1CE7E7, 0 0 60px #1CE7E7, 0 0 70px #1CE7E7;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #1CE7E7, 0 0 40px #1CE7E7, 0 0 50px #1CE7E7, 0 0 60px #1CE7E7, 0 0 70px #1CE7E7, 0 0 80px #1CE7E7;
+  }
+}
+}

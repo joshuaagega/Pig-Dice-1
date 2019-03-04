@@ -2,9 +2,11 @@ p1total = 0
 score = 0
 p2total = 0
 score2 = 0
-function Player(name){
-  this.name=name
+
+function Player(name) {
+  this.name = name
 }
+
 function Turn2() {
   document.getElementById('player001s').disabled = true
   document.getElementById('player002').disabled = false
@@ -20,13 +22,13 @@ function Turn1() {
 
 }
 $(document).ready(function() {
-$("#button00").click(function(){
-    var player1=new Player(this.name=$("input.gamername1").val())
-  alert(player1.name)
-$("span#player01").text(player1.name)
-var player2=new Player(this.name=$("input.gamername2").val())
-$("span#player02").text(player2.name)
-})
+  $("#button00").click(function() {
+    var player1 = new Player(this.name = $("input.gamername1").val())
+    alert(player1.name)
+    $("span#player01").text(player1.name)
+    var player2 = new Player(this.name = $("input.gamername2").val())
+    $("span#player02").text(player2.name)
+  })
   $("#player001s").click(function() {
     var rolled = Math.floor((Math.random() * 6) + 1)
     $("#rolls001").text(rolled);

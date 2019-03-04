@@ -1,9 +1,9 @@
-.container{
-background-color: #6E7171;
-font-family: 'Pacifico', cursive;
-font-size: 20px;
-color:
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
+.container {
+  background-color: #6E7171;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color:
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
@@ -12,11 +12,13 @@ color:
   from {
     text-shadow: 0 0 5px #F2F2F2, 0 0 10px #F2F2F2, 0 0 20px #1CE7E7, 0 0 30px #1CE7E7, 0 0 40px #1CE7E7, 0 0 50px #1CE7E7, 0 0 60px #1CE7E7;
   }
+
   to {
     text-shadow: 0 0 10px #F2F2F2, 0 0 20px #1CE7E7, 0 0 30px #1CE7E7, 0 0 40px #1CE7E7, 0 0 50px #1CE7E7, 0 0 60px #1CE7E7, 0 0 70px #1CE7E7;
   }
 }
 }
+
 input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -33,4 +35,107 @@ input[type=text]:focus, textarea:focus {
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid rgba(81, 203, 238, 1);
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #004A7F;
+    -webkit-box-shadow: 0 0 3px #004A7F;
+  }
+
+  50% {
+    background-color: #0094FF;
+    -webkit-box-shadow: 0 0 10px #0094FF;
+  }
+
+  100% {
+    background-color: #004A7F;
+    -webkit-box-shadow: 0 0 3px #004A7F;
+  }
+}
+
+@-moz-keyframes glowing {
+  0% {
+    background-color: #004A7F;
+    -moz-box-shadow: 0 0 3px #004A7F;
+  }
+
+  50% {
+    background-color: #0094FF;
+    -moz-box-shadow: 0 0 10px #0094FF;
+  }
+
+  100% {
+    background-color: #004A7F;
+    -moz-box-shadow: 0 0 3px #004A7F;
+  }
+}
+
+@-o-keyframes glowing {
+  0% {
+    background-color: #004A7F;
+    box-shadow: 0 0 3px #004A7F;
+  }
+
+  50% {
+    background-color: #0094FF;
+    box-shadow: 0 0 10px #0094FF;
+  }
+
+  100% {
+    background-color: #004A7F;
+    box-shadow: 0 0 3px #004A7F;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #004A7F;
+    box-shadow: 0 0 3px #004A7F;
+  }
+
+  50% {
+    background-color: #0094FF;
+    box-shadow: 0 0 10px #0094FF;
+  }
+
+  100% {
+    background-color: #004A7F;
+    box-shadow: 0 0 3px #004A7F;
+  }
+}
+
+#button00 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+#button01 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+#button1 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+#player002 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+#button022 {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
 }

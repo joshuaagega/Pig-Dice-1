@@ -1,112 +1,82 @@
-var player01 = "";
-var player02 = "";
+p1total = 0
+score = 0
+p2total = 0
+score2 = 0
+function Player(name){
+  this.name=name
+}
+function Turn2() {
+  document.getElementById('player001s').disabled = true
+  document.getElementById('player002').disabled = false
+  p1total = 0
 
-var playing = function() {
-  return Math.floor(6 * Math.random()) + 1;
 }
 
-function gamer() {
-  this.play = 0;
-  this.finalscore = 0;
-  this.total = 0;
-  this.turn;
-  this.playerIdentity;
-}
+function Turn1() {
+  document.getElementById('player002').disabled = true
+  document.getElementById('player001s').disabled = false
 
-gamer.prototype.roll = function() {
-  if (this.play === 1) {
-    this.finalscore = 0;
-    alert("TRY AGAIN" + this.playerIdentity);
-  } else {
-    this.total += this.play;
+  p2total = 0
 
-  }
 }
-
-gamer.prototype.pause = function() {
-  this.total += this.finalscore;
-  this.finalscore = 0;
-  alert(this.playerIdentity + "NEXT PLAYER");
-}
-gamer.prototype.number1Confirm = function() {
-  if (this.total >= 100) {
-    alert(this.playerIdentity + "YOU WON");
-  }
-}
-
-gamer.prototype.freshGame = function() {
-  this.play = 0;
-  this.finalscore = 0;
-  this.total = 0;
-  this.playerIdentity = "";
-}
-
-var renew = function() {
-  $(".gamername1").val("");
-  $(".gamername2").val("");
-}
-
 $(document).ready(function() {
+$("#button00").click(function(){
+    var player1=new Player(this.name=$("input.gamername1").val())
+  alert(player1.name)
+$("span#player01").text(player1.name)
+var player2=new Player(this.name=$("input.gamername2").val())
+$("span#player02").text(player2.name)
+})
+  $("#player001s").click(function() {
+    var rolled = Math.floor((Math.random() * 6) + 1)
+    $("#rolls001").text(rolled);
+    if (rolled == 1) {
+      alert("Sorry You rolled a 1")
 
-  $("button#button00").click(function(event) {
-    player01 = new gamer(true);
-    player02 = new gamer(false);
-    $("").show();
-    $("").hide();
+      Turn2()
+    } else {
+      p1total += rolled;
 
-    var gamername1 = $(".gamername1").val();
-    $("#gamername1").text(gamername1);
+    }
 
-    var gamername2 = $(".gamername2").val();
-    $("#gamername2").text(gamername2);
+    $("#total001").text(p1total);
 
-    player01.gamername = gamername1;
-    player02.gamername = gamername2;
+    $("#player011").click(function(event) {
+
+      score += p1total;
+      alert(score)
+      if (score < 100) {
+        Turn2()
+      } else {
+        alert("You won")
+      }
+    });
 
   });
-  $("button#button1").click(function(event) {
-    $("").hide();
-    clearValues();
-    player01.freshGame();
-    player02.freshGame();
-    $("#round00").empty();
-    $("#total001").empty();
-    $("#rolls001").empty();
-    $("#round001").empty();
-    $("#total002").empty();
-    $("#rolls002").empty();
 
-    $("").show();
+  $("#player002").click(function() {
+    var rolled = Math.floor((Math.random() * 6) + 1)
+    $("#rolls002").text(rolled);
+    if (rolled == 1) {
+      alert("Sorry You rolled a 1")
+      p2total = 0
+      Turn1()
+
+    } else {
+      p2total += rolled;
+    }
+
+    $("#total002").text(p2total);
+    $("#player022").click(function(event) {
+      event.preventDefault();
+
+      score2 += p2total
+      alert(score2)
+      if (score2 < 100) {
+        Turn1()
+      } else {
+        alert("You won")
+      }
+    });
   });
-
-  $("button#player001").click(function(event) {
-    player01.play = playing();
-    $("#rolls001").text(player01.play);
-    player02.rollone();
-    $("#round00").text(player01.finalscore);
-  });
-
-  $("button#player002").click(function(event) {
-    player02.play = playing();
-    $("#rolls002").text(player02.play);
-    player02.rollone();
-    $("#round001").text(player02.finalscore);
-  });
-
-  $("button#player011").click(function(event) {
-    player01.pause();
-    $("#total001").text(player01.total);
-    $("#round00").empty();
-    $("#rolls001").empty();
-    player01.number1Confirm();
-  });
-
-  $("button#player022").click(function(event) {
-    player02.pause();
-    $("#total002").text(player02.total);
-    $("#round001").empty();
-    $("#rolls002").empty();
-    player02.number1Confirm();
-  });
-
-});
+})
